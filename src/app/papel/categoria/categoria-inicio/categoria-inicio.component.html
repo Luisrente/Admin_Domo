@@ -1,0 +1,31 @@
+
+<div class="container" >
+    <p>lISTA DE CATEGORIA!</p>
+    <router-outlet></router-outlet>
+    <button routerLink="/dashboard/categoriaAgregar" routerLinkActive="active" type="button" class="btn btn-dark">Agregar </button>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of listarCategoria"> 
+            <th>{{category.id}}</th>
+            <td>{{category.service}}</td>
+            <td>
+                <!-- this.rutaActiva.snapshot.params["id"]  <button (click)="modificar(residuo.id_equipo)" type="button" [routerLink]="['/dashboard/residuo/residuoEdit/',residuo.id_equipo]"  class="btn btn-primary">Editar</button> -->
+                <!-- <button type="button" [routerLink]="['/dashboard/residuo/residuoEdit/',residuo.id_equipo]" routerLinkActive="active" class="btn btn-primary">Editar</button> -->
+                <button type="button"  routerLinkActive="active" class="btn btn-primary">Editar</button>
+            </td>
+            <td>
+                <button  (click)="delete(category.iud)"type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<router-outlet></router-outlet>

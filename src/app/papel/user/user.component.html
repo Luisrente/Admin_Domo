@@ -1,0 +1,38 @@
+
+<div class="container" >
+    <p>lISTA DE USUARIOS</p>
+    <router-outlet></router-outlet>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Active</th>
+            <th scope="col">Ide</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Documento</th>
+            <th scope="col">uid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of listarUser"> 
+            <th>{{user.active}}</th>
+            <th>{{user.ide}}</th>
+            <th>{{user.lastName}}</th>
+            <th>{{user.name}}</th>
+            <th>{{user.active}}</th>
+            <th>{{user.typeIde}}</th>
+            <th>{{user.uid}}</th>
+         
+            <td>
+                <!-- this.rutaActiva.snapshot.params["id"]  <button (click)="modificar(residuo.id_equipo)" type="button" [routerLink]="['/dashboard/residuo/residuoEdit/',residuo.id_equipo]"  class="btn btn-primary">Editar</button> -->
+                <!-- <button type="button" [routerLink]="['/dashboard/residuo/residuoEdit/',residuo.id_equipo]" routerLinkActive="active" class="btn btn-primary">Editar</button> -->
+                <button type="button"  routerLinkActive="active" class="btn btn-primary">Editar</button>
+            </td>
+            <td>
+                <button  type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
